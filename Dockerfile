@@ -1,7 +1,7 @@
-ARG NODE_VERSION
-FROM node:${NODE_VERSION}-alpine
-ARG NPM_VERSION
+FROM node:18.12.1-alpine
 
+ENV NODE_VERSION=18.12.1
+ENV NPM_VERSION=8.19.1
 # Install npm
 RUN ver=$(echo $NODE_VERSION | awk '{print int($NF)}') && \
     if [ "$ver" -lt "16" ]; then \
